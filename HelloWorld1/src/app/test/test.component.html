@@ -1,0 +1,51 @@
+<p>test works!</p>
+<p>{{testProp}}</p>
+<p>Hi, this is {{name}}</p>
+<p>{{9+9}}</p>
+<p>{{"9+9"}}</p>
+<p>{{9+"9+9"}}</p>
+<p>{{"9"+9+9}}</p>
+<h2 [ngStyle]="myStyle">{{name}}</h2>
+<p>{{name.toUpperCase()}}</p>
+<p>{{greetAddedName()}}</p>
+<p [style.color]="'blue'">{{inputValue}}</p>
+<p [class]="myc">Hi this is Rishi Pomal Orange class</p>
+
+<div *ngIf="inputValue == 'Rishi' then ifTem ,else elsTem">
+
+</div>
+<ng-template #ifTem >
+    <div> {{inputValue + "In IF Statement"}} 
+    </div>
+</ng-template>
+
+<ng-template #elsTem >
+    <div> {{"This is else statement"}}</div>
+</ng-template>
+
+<div>
+    <input  #myinput [disabled]="isDisabled" type=text value={{name}} >
+    <input [(ngModel)]="inputValue" type=text>
+<button (click)="onClick(myinput)">Toggle Disable</button>
+</div>
+
+<div>
+    <button (click)="fireChildEvent(myinput)">Child Event Emitter</button>
+</div>
+
+<div *ngFor="let clr of clrsArr; last as i"> 
+    <p>{{i}} {{clr}}</p>
+</div>
+
+<div [ngSwitch]="myClr">
+    <div *ngSwitchCase="'Red'"> RED is selected</div>
+    <div *ngSwitchCase="'Yellow'"> Yellow is selected</div>
+    <div *ngSwitchCase="'Violet'"> Violet is selected</div>
+
+</div>
+
+
+
+
+
+

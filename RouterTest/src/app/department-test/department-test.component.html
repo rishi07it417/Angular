@@ -1,0 +1,4 @@
+<p>department-test works!</p>
+<div *ngFor="let dep of departments"> 
+     <button (click)="onSelect(dep)"  [style.color]="onSelected(dep)"> {{dep.name}}</button>
+</div>
